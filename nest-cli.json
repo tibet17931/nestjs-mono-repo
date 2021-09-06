@@ -1,0 +1,55 @@
+{
+  "collection": "@nestjs/schematics",
+  "sourceRoot": "apps/api-auth/src",
+  "monorepo": true,
+  "root": "apps/api-auth",
+  "compilerOptions": {
+    "webpack": true,
+    "tsConfigPath": "apps/api-auth/tsconfig.app.json"
+  },
+  "projects": {
+    "api-auth": {
+      "type": "application",
+      "root": "apps/api-auth",
+      "entryFile": "main",
+      "sourceRoot": "apps/api-auth/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/api-auth/tsconfig.app.json",
+        "plugins": [ {
+          "name": "@nestjs/swagger",
+          "options": {
+            "classValidatorShim": true,
+            "introspectComments": true
+          }
+        }]
+      }
+    },
+    "api-product": {
+      "type": "application",
+      "root": "apps/api-product",
+      "entryFile": "main",
+      "sourceRoot": "apps/api-product/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/api-product/tsconfig.app.json"
+      }
+    },
+    "database": {
+      "type": "library",
+      "root": "libs/database",
+      "entryFile": "index",
+      "sourceRoot": "libs/database/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/database/tsconfig.lib.json"
+      }
+    },
+    "jwt": {
+      "type": "library",
+      "root": "libs/jwt",
+      "entryFile": "index",
+      "sourceRoot": "libs/jwt/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/jwt/tsconfig.lib.json"
+      }
+    }
+  }
+}
