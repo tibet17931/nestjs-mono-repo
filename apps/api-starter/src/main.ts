@@ -14,9 +14,9 @@ async function bootstrap() {
   const app = await NestFactory.create<NestFastifyApplication>(AppModule, new FastifyAdapter());
 
   const config = app.get<ConfigService>(ConfigService);
-  const port = config.get("authentication.port") || 3000;
+  const port = config.get("starter.port") || 3000;
 
-  const prefix = 'authentication';
+  const prefix = 'starter';
 
   app.useGlobalPipes(new ValidationPipe());
   app.setGlobalPrefix(prefix);

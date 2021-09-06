@@ -15,22 +15,24 @@
       "sourceRoot": "apps/api-auth/src",
       "compilerOptions": {
         "tsConfigPath": "apps/api-auth/tsconfig.app.json",
-        "plugins": [ {
-          "name": "@nestjs/swagger",
-          "options": {
-            "classValidatorShim": true,
-            "introspectComments": true
+        "plugins": [
+          {
+            "name": "@nestjs/swagger",
+            "options": {
+              "classValidatorShim": true,
+              "introspectComments": true
+            }
           }
-        }]
+        ]
       }
     },
-    "api-product": {
+    "api-starter": {
       "type": "application",
-      "root": "apps/api-product",
+      "root": "apps/api-starter",
       "entryFile": "main",
-      "sourceRoot": "apps/api-product/src",
+      "sourceRoot": "apps/api-starter/src",
       "compilerOptions": {
-        "tsConfigPath": "apps/api-product/tsconfig.app.json"
+        "tsConfigPath": "apps/api-starter/tsconfig.app.json"
       }
     },
     "database": {
