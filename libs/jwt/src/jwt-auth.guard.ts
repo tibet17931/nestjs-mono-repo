@@ -39,6 +39,7 @@ export class JwtAuthGuard extends AuthGuard('jwt') implements CanActivate {
         // You can throw an exception based on either "info" or "err" arguments
         this.logger.log(`user -> ${JSON.stringify(user)}`);
         this.logger.log(`service_name -> ${this.service_name}`);
+        // we can protect guard here
 
         if (err || !user) {
             throw err || new UnauthorizedException();
